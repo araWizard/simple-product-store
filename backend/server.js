@@ -15,7 +15,8 @@ app.use(express.json()); // allows us to accept in req.body (middleware function
 
 app.use("/api/products", productRoutes);
 
-app.listen(5000, () => {
+const PORT = process.env.PORT || 5000;
+app.listen(PORT, () => {
     connectDB();
     console.log("Server started at https://localhost:5000 :)");
 });
